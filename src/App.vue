@@ -1,6 +1,6 @@
 
 <template>
-  <div class="w-full min-h-screen flex flex-col bg-white hidden md:w-fit">
+  <div class="w-full min-h-screen flex flex-col bg-white  md:w-fit">
     <div class="img h-[285px] bg-cover bg-no-repeat"></div>
     <div class="px-6">
       <div class="flex flex-col gap-6">
@@ -27,11 +27,13 @@
           class="px-6 py-4 w-full rounded-lg h-[]" name="email" type="email">
       </div>
 
-      <button class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6">Subscribe to monthly
+      <button @click="send" class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6">Subscribe to
+        monthly
         newsletter</button>
     </div>
   </div>
-  <div class="w-full min-h-screen bg-white absolute flex flex-col justify-between px-6 pb-10 md:w-fit">
+  <div v-if="showSection"
+    class="w-full min-h-screen bg-white absolute top-0 flex flex-col justify-between px-6 pb-10 md:w-fit">
     <div class="mt-[150px]">
       <img src="./assets/images/icon-success.svg" height="64" width="64" alt="">
       <h1 class="mt-10 text-4xl mb-6">Thanks for subscribing!</h1>
@@ -41,7 +43,8 @@
         click the button inside to confirm
         your subscription</p>
     </div>
-    <button class='bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6'>Dismiss message</button>
+    <button @click="dismiss" class='bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6'>Dismiss
+      message</button>
   </div>
 </template>
 
@@ -54,7 +57,10 @@ export default {
   },
   methods: {
     send() {
-      this.showSection == false ? this.showSection = true : this.showSection == false
+      this.showSection = true
+    },
+    dismiss() {
+      this.showSection = false
     }
   },
   computed: {
