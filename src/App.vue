@@ -22,10 +22,13 @@
       </div>
     </div>
     <div class="px-6 mt-10">
-      <label for="email">Email Adress</label>
+      <label for="email" class="font-bold">Email Adress</label>
       <div class=" border-solid border-[1px] border-[rgba(25, 24, 43, 0.25)] rounded-lg"><input
           class="px-6 py-4 w-full rounded-lg h-[]" name="email" type="email">
       </div>
+
+      <button class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6">Subscribe to monthly
+        newsletter</button>
     </div>
   </div>
 </template>
