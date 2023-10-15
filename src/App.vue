@@ -9,15 +9,15 @@
         <p class="mb-6">Join 60,000+ product managers receiving monthly updates on:</p>
       </div>
 
-      <div class="flex "><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
+      <div class="flex py-[5px]"><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
           width="21">
         <p>Product discovery and building what matters</p>
       </div>
-      <div class="flex "><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
+      <div class="flex py-[5px]"><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
           width="21">
         <p>Measuring to ensure updates are a success</p>
       </div>
-      <div class="flex "><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
+      <div class="flex py-[5px]"><img class=" self-start mr-4" src="./assets/images/icon-success.svg" alt="" height="21"
           width="21">
         <p>And much more!</p>
       </div>
@@ -27,7 +27,9 @@
             class="px-6 py-4 w-full rounded-lg outline-none" name="email" type="email" placeholder="email@company.com">
         </div>
 
-        <button @click="send" class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6">Subscribe to
+        <button @click="send"
+          class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6 hover:bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B] shadow-xl">Subscribe
+          to
           monthly
           newsletter</button>
       </div>
@@ -45,7 +47,8 @@
         click the button inside to confirm
         your subscription</p>
     </div>
-    <button @click="dismiss" class='bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6'>Dismiss
+    <button @click="dismiss"
+      class='bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6 hover:bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B] shadow-xl'>Dismiss
       message</button>
   </div>
 </template>
@@ -55,6 +58,7 @@ export default {
   data() {
     return {
       showSection: false,
+      btnhover: 'bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B]'
     }
   },
   methods: {
@@ -64,6 +68,7 @@ export default {
     dismiss() {
       this.showSection = false
     }
+
   },
   computed: {
 
