@@ -1,7 +1,7 @@
 
 <template>
   <div
-    class="w-full h-screen flex flex-col bg-white  md:w-fit lg:flex-row-reverse md:rounded-lg lg:rounded-[36px] lg:w-[930px] lg:h-[630px] lg:pr-5">
+    class="w-full h-screen flex flex-col bg-white max-md:pb-6 justify-between  md:w-fit lg:flex-row-reverse md:rounded-lg lg:rounded-[36px] lg:w-[930px] lg:h-[630px] lg:pr-5">
     <div class="img h-[285px] bg-cover bg-no-repeat md:rounded-lg lg:w-[50%]"></div>
     <div class="px-6 lg:px-16 md:py-5 lg:py-24">
       <div class="flex flex-col gap-6">
@@ -36,11 +36,14 @@
     </div>
 
   </div>
+  <div v-if="showSection" class="w-full h-screen bg-[#36384D] absolute top-0">
+
+  </div>
   <div v-if="showSection"
-    class="w-full min-h-screen bg-white absolute top-0 flex flex-col justify-between px-6 pb-6 md:w-fit">
-    <div class="mt-[150px]">
+    class="w-full h-screen bg-white absolute top-0 flex flex-col justify-between px-6 pb-6 md:w-fit lg:w-[504px] lg:h-[520px] lg:top-auto lg:rounded-[36px] lg:px-16 lg:pb-16">
+    <div class="mt-[150px] lg:mt-[48px]">
       <img src="./assets/images/icon-success.svg" height="64" width="64" alt="">
-      <h1 class="mt-10 text-4xl mb-6">Thanks for subscribing!</h1>
+      <h1 class="mt-10 text-4xl mb-6 md:text-[56px] leading-[100%]">Thanks for subscribing!</h1>
       <p class=" leading-[150%]">A confirmation email has been sent to <span
           class="font-bold">ash@loremcompany.com.</span> Please open
         it and
