@@ -22,12 +22,15 @@
         <p>And much more!</p>
       </div>
       <div class="mt-10">
-        <label for="email" class="font-bold">Email Adress</label>
-        <div class=" border-solid border-[1px] border-[rgba(25, 24, 43, 0.25)] rounded-lg"><input
-            class="px-6 py-4 w-full rounded-lg outline-none" name="email" type="email" placeholder="email@company.com">
+        <div class="flex justify-between"><label for="email" class="font-bold">Email Adress</label>
+          <p v-if="warning" class="text-[#FF6155]">Valid email required</p>
+        </div>
+        <div class=" border-solid border-[1px] border-[rgba(25, 24, 43, 0.25)] rounded-lg"><input v-model="email"
+            v-on:change="inptColor" class="px-6 py-4 w-full rounded-lg outline-none" name="email" type="email"
+            placeholder="email@company.com">
         </div>
 
-        <button @click="send"
+        <button @click="validateEmail"
           class="bg-[#242742] text-white font-bold w-full py-5 px-8 rounded-lg mt-6 hover:bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B] shadow-xl">Subscribe
           to
           monthly
@@ -61,7 +64,10 @@ export default {
   data() {
     return {
       showSection: false,
-      btnhover: 'bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B]'
+      btnhover: 'bg-gradient-to-tl from-[#FF6A3A] to-[#FF527B]',
+      email: '',
+      warning: false,
+
     }
   },
   methods: {
@@ -70,11 +76,29 @@ export default {
     },
     dismiss() {
       this.showSection = false
+    },
+    validateEmail() {
+      if (this.emailValidate(this.email)) {
+        this.warning = false
+        this.send()
+      } else {
+        this.warning = true
+        this.inptColor
+
+      }
+    },
+    emailValidate(email) {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      return emailPattern.test(email);
+    },
+    inptColor(event) {
+      let input = event.target;
+      console.log(input);
     }
 
   },
   computed: {
-
+    inputStyles
   }
 }
 
@@ -89,11 +113,7 @@ export default {
 
 }
 
-h1,
-h2,
-p {
-  color: #242742;
-}
+
 
 p {
   font-size: 16px;
