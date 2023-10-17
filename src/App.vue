@@ -26,8 +26,8 @@
           <p v-if="warning" class="text-[#FF6155]">Valid email required</p>
         </div>
         <div class=" border-solid border-[1px] border-[rgba(25, 24, 43, 0.25)] rounded-lg"><input v-model="email"
-            v-on:change="inptColor" class="px-6 py-4 w-full rounded-lg outline-none" name="email" type="email"
-            placeholder="email@company.com">
+            v-on:change="inptColor" :style="inputStyles" class="px-6 py-4 w-full rounded-lg outline-none" name="email"
+            type="email" placeholder="email@company.com">
         </div>
 
         <button @click="validateEmail"
@@ -83,8 +83,6 @@ export default {
         this.send()
       } else {
         this.warning = true
-        this.inptColor
-
       }
     },
     emailValidate(email) {
@@ -98,7 +96,11 @@ export default {
 
   },
   computed: {
-    inputStyles
+    inputStyles() {
+      return {
+        background: this.warning == true ? 'rgba(255, 97, 85, 0.15)' : '#fff',
+      }
+    }
   }
 }
 
