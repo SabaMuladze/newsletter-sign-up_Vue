@@ -47,8 +47,8 @@
     <div class="mt-[150px] lg:mt-[48px]">
       <img src="./assets/images/icon-success.svg" height="64" width="64" alt="">
       <h1 class="mt-10 text-4xl mb-6 md:text-[56px] leading-[100%]">Thanks for subscribing!</h1>
-      <p class=" leading-[150%]">A confirmation email has been sent to <span
-          class="font-bold">ash@loremcompany.com.</span> Please open
+      <p class=" leading-[150%]">A confirmation email has been sent to <span class="font-bold">{{ email }}</span>
+        Please open
         it and
         click the button inside to confirm
         your subscription</p>
