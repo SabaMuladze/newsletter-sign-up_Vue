@@ -91,7 +91,6 @@ export default {
     },
     inptColor(event) {
       let input = event.target;
-      console.log(input);
     }
 
   },
